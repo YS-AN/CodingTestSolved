@@ -30,3 +30,35 @@ function sol_CountEvenOdd_2(num_list) {
     num_list.forEach(x => answer[x % 2] += 1);
     return answer;
 }
+
+//26.편지
+function sol_GetLetterLen(message) {
+    return [...message].length * 2;
+}
+
+//27.옹알이
+function sol_SpeckCount(babbling) {
+    let cnt = 0;
+    let spks = ["aya", "ye", "woo", "ma"]
+    babbling.forEach((item) => {
+        spks.map(x => item = item.replace(x, ' '));
+        cnt += (item.replaceAll(' ', '').length == 0 ? 1 : 0);
+    });
+
+    return cnt;
+}
+
+//28.OX퀴즈
+//eval() 함수를 쓰면 수식 그대로 계산을 해주긴 하는데 지양해야 함
+function sol_OXGame(quiz) {
+    let arr = [];
+
+    quiz.forEach(item => {
+        var val = item.split(' ').map((item, index) => index % 2 == 0 ? parseInt(item) : item);
+
+        (val[1] == '-') ?
+            arr.push((val[0] - val[2] == val[4]) ? "O" : "X") :
+            arr.push((val[0] + val[2] == val[4]) ? "O" : "X")
+    });
+    return arr;
+}
