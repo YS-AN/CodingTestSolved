@@ -62,3 +62,13 @@ function sol_OXGame(quiz) {
     });
     return arr;
 }
+
+//29.특정 문자 제거하기
+function sol_RemoveLetter(my_string, letter) {
+    return my_string.replaceAll(letter, '');
+}
+
+//30.문자반복 출력하기
+function sol_RepeatLetter(my_string, n) {
+    return [...my_string].map(x => x.repeat(n)).join('');
+}
