@@ -27,3 +27,10 @@ function sol_HateEng(numbers) {
     engNums.map((item, i) => { numbers = numbers.replaceAll(item, i); })
     return Number(numbers);
 }
+
+//35.공던지기
+function solution(numbers, k) {
+    let len = numbers.length;
+    let curIndex = (len % k == 0 ? len : len % k) - 1;
+    return len % 2 == 0 ? numbers[curIndex] : 0;
+}
