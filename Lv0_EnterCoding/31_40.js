@@ -34,3 +34,21 @@ function solution(numbers, k) {
     let curIndex = (len % k == 0 ? len : len % k) - 1;
     return len % 2 == 0 ? numbers[curIndex] : 0;
 }
+
+//36.배열의 유사도
+function sol_MathArry(s1, s2) {
+    return (s1.filter(x => s2.includes(x))).length
+}
+
+//37.최댓값 만들기(1)
+function sol_MakeValue1(numbers) {
+    numbers = numbers.sort((a, b) => b - a);
+    return numbers[0] * numbers[1];
+}
+
+//38.최댓값 만들기(2)
+function sol_MakeValue2(numbers) {
+    let len = numbers.length - 1;
+    numbers.sort((a, b) => a - b);
+    return (numbers[0] * numbers[1]) > (numbers[len] * numbers[len - 1]) ? (numbers[0] * numbers[1]) : (numbers[len] * numbers[len - 1]);
+}
