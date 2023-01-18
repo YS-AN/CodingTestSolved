@@ -41,8 +41,6 @@ function sol_HideAdd1(my_string) {
     return answer;
 }
 
-
-
 //44.숨어있는 숫자의 덧셈 (2)
 function sol_HideAdd2(my_string) {
     var answer = 0;
@@ -50,4 +48,15 @@ function sol_HideAdd2(my_string) {
         answer += (x != '' ? parseInt(x) : 0));
 
     return answer;
+}
+
+//45.외계행성의 나이
+function sol_NumToAlphabet(age) {
+    return [...age.toString()].map(val => String.fromCharCode(Number(val) + 97)).join('');
+}
+
+//46.진로 순서 정하기
+function sol_SortIndex(emergency) {
+    var sortArr = emergency.filter(() => true).sort((a, b) => b - a);
+    return emergency.map(item => sortArr.findIndex(val => val == item) + 1);
 }
