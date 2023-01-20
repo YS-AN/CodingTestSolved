@@ -60,3 +60,8 @@ function sol_SortIndex(emergency) {
     var sortArr = emergency.filter(() => true).sort((a, b) => b - a);
     return emergency.map(item => sortArr.findIndex(val => val == item) + 1);
 }
+
+//47.자릿수 더하기
+function sol_AddNum(n) {
+    return [...n.toString()].reduce((acc, val) => acc + parseInt(val), 0);
+}
