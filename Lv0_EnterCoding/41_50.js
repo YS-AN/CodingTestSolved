@@ -65,3 +65,35 @@ function sol_SortIndex(emergency) {
 function sol_AddNum(n) {
     return [...n.toString()].reduce((acc, val) => acc + parseInt(val), 0);
 }
+
+//48.개미 군단
+function sol_Ants(hp) {
+    var answer = 0;
+    let power = [5, 3, 1];
+
+    power.map(p => {
+        var cnt = Math.floor(hp / p);
+        answer += cnt;
+        hp -= (cnt * p);
+    });
+    return answer;
+}
+
+//48_1.개미 군단 (나머지 활용법)
+function sol_Ants_1(hp) {
+    return Math.floor(hp / 5) + Math.floor((hp % 5) / 3) + (hp % 5) % 3;
+}
+
+//49.모스부호
+function sol_morse(letter) {
+    var answer = '';
+    var morse = {
+        '.-': 'a', '-...': 'b', '-.-.': 'c', '-..': 'd', '.': 'e', '..-.': 'f',
+        '--.': 'g', '....': 'h', '..': 'i', '.---': 'j', '-.-': 'k', '.-..': 'l',
+        '--': 'm', '-.': 'n', '---': 'o', '.--.': 'p', '--.-': 'q', '.-.': 'r',
+        '...': 's', '-': 't', '..-': 'u', '...-': 'v', '.--': 'w', '-..-': 'x',
+        '-.--': 'y', '--..': 'z'
+    }
+    letter.split(' ').map(item => answer += morse[item]);
+    return answer;
+}
