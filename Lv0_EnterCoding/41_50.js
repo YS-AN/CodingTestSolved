@@ -97,3 +97,9 @@ function sol_morse(letter) {
     letter.split(' ').map(item => answer += morse[item]);
     return answer;
 }
+
+//50.가위 바위 보
+function sol_GetWinRSP(rsp) {
+    var retRsp = { 2: 0, 0: 5, 5: 2 };
+    return [...rsp].map(x => retRsp[x]).join('');
+}
