@@ -1,0 +1,24 @@
+//61.가장 큰 수 찾기
+function sol_FindMaxNum(array) {
+    var answer = [];
+    answer.push(Math.max(...array));
+    answer.push(array.findIndex(x => x == answer[0]));
+    return answer;
+}
+
+//62.숫자 찾기
+function sol_FindNum(num, k) {
+    var answer = [...num.toString()].findIndex(x => x == k);
+    return answer == -1 ? answer : answer + 1;
+}
+
+//63.2차원으로 만들기
+function sol_Make2D(num_list, n) {
+    //내 풀이
+    //return Array.from({ length: (num_list.length/n) }, () => new Array(n).fill(0)).map((arr, i) => arr.map((x, j) => num_list[i*n+j]));
+
+    //다른 사람 풀이 : 훨씬 간단
+    //1.굳이 모든 배열의 길이를 선언해줄 필요는 없음 - 하위는 선언필요 없음
+    //2.배열 메소드 활용 방식 확인하기
+    return Array(num_list.length / n).fill([]).map(() => num_list.splice(0, n));
+}
