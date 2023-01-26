@@ -22,3 +22,9 @@ function sol_Make2D(num_list, n) {
     //2.배열 메소드 활용 방식 확인하기
     return Array(num_list.length / n).fill([]).map(() => num_list.splice(0, n));
 }
+
+//64.잘라서 배열로 저장하기
+function sol_CutArr(my_str, n) {
+    var arr = [...my_str];
+    return Array(Math.ceil(arr.length / n)).fill("").map(x => arr.splice(0, n).join(''))
+}
