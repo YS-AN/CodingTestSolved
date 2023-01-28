@@ -28,3 +28,14 @@ function sol_CutArr(my_str, n) {
     var arr = [...my_str];
     return Array(Math.ceil(arr.length / n)).fill("").map(x => arr.splice(0, n).join(''))
 }
+
+//65.컨트롤 제트
+function sol_CtrlZ(s) {
+    var arr = s.split(' ');
+    return arr.map((x, i) => (i > 0 && x == "Z") ? arr[i - 1] * -1 : Number(x)).reduce((acc, val) => acc + val);
+}
+
+//66.이진수 더하기
+function sol_AddBinary(bin1, bin2) {
+    return (parseInt(bin1, 2) + parseInt(bin2, 2)).toString(2);
+}
