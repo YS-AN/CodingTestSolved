@@ -39,3 +39,13 @@ function sol_CtrlZ(s) {
 function sol_AddBinary(bin1, bin2) {
     return (parseInt(bin1, 2) + parseInt(bin2, 2)).toString(2);
 }
+
+//67.한 번만 등장한 문자
+function sol_JustOne(s) {
+    return [...s].filter(item => [...s.matchAll(new RegExp(item, 'g'))].length == 1).sort().join('');
+}
+
+//68.7의 개수
+function sol_count7(array) {
+    return ([...array.join('')].filter(x => x == 7)).length
+}
