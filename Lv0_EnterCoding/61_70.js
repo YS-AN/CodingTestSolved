@@ -49,3 +49,9 @@ function sol_JustOne(s) {
 function sol_count7(array) {
     return ([...array.join('')].filter(x => x == 7)).length
 }
+
+//69.로그인 성공?
+function sol_IsLogin(id_pw, db) {
+    var id = id_pw[0];
+    return (new Map(db)).has(id) ? (db.filter(item => item.every(x => id_pw.includes(x))).length == 0 ? "wrong pw" : "login") : "fail";
+}
