@@ -55,3 +55,10 @@ function sol_IsLogin(id_pw, db) {
     var id = id_pw[0];
     return (new Map(db)).has(id) ? (db.filter(item => item.every(x => id_pw.includes(x))).length == 0 ? "wrong pw" : "login") : "fail";
 }
+
+//70.k의 개수
+function sol_FindK(i, j, k) {
+    let nums = Array(j - i + 1).fill('').map(() => (i++)).join('');
+    let key = k.toString();
+    return [...nums].filter(x => x.indexOf(key) >= 0).length;
+}
