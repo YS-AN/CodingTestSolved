@@ -31,5 +31,8 @@ function sol_Ranks(score) {
     return arr.map(item => ranks.indexOf(item) + 1);
 }
 
-
+//74. 대문자와 소문자
+function sol_UpperAndLower(my_string) {
+    return [...my_string].map(x => x.match(/[a-z]/g) == null ? x.toLowerCase() : x.toUpperCase()).join('');
+}
 
