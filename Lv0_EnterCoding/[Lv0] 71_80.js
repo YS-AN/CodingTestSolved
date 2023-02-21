@@ -36,3 +36,22 @@ function sol_UpperAndLower(my_string) {
     return [...my_string].map(x => x.match(/[a-z]/g) == null ? x.toLowerCase() : x.toUpperCase()).join('');
 }
 
+
+/* 미완
+function solution(numbers, direction) {
+    console.log("asf");
+    var dirI = direction == "right" ? -1 : 1;
+    var answer = [];
+    //return answer.map((num, i) => numbers[])
+    Array(numbers.length).fill(0).map(() => console.log(numbers.splice(0, 1)));
+    console.log(numbers);
+}
+
+solution([1, 2, 3], "right");
+//[3, 1, 2]
+
+
+0 1 2
+R => 2 0 1
+L => 1 2 0
+*/
