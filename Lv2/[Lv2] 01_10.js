@@ -15,4 +15,33 @@ function chkCharCase(val, index) {
     return index == 0 ? val.toUpperCase() : val.toLowerCase();
 }
 
+//03.영어 끝말잇기
+function solution(n, words) {
+    let len = words.length;
+    let num1 = len, num2;
 
+    var duplicatedArr = words.filter((item, index) => words.indexOf(item) != index);
+
+    if (duplicatedArr.length > 0) {
+        num1 = words.lastIndexOf(duplicatedArr[0]);
+        num1 < 0 ? len : num1;
+    }
+
+    for (let i = 0; i < len;) {
+        if (words[i].slice(-1) != words[(++i) % len].charAt(0)) {
+            num2 = i;
+            break;
+        }
+    }
+
+    var num = num1 > num2 ? num2 : num1;
+    var time = num == len ? 0 : Math.round((num + 1) / n) + ((num + 1) % n == 0 ? 0 : 1);
+    var player = num % n + 1;
+    console.log(num1, num2, num)
+    return (num == len ? [0, 0] : [player, time]);
+}
+
+
+
+//str.charAt(str.length - 1);
+solution(3, ["tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"]);
