@@ -15,7 +15,23 @@ function chkCharCase(val, index) {
     return index == 0 ? val.toUpperCase() : val.toLowerCase();
 }
 
-//03.영어 끝말잇기
+//03.올바른 괄호
+function sol_RightMatch(s) {
+    if (s.charAt(0) != "(" || s.charAt(s.length - 1) != ")")
+        return false;
+
+    var cnt = 0;
+    for (let x of s) {
+        cnt = cnt + (x === "(" ? 1 : -1)
+
+        if (cnt < 0)
+            break;
+    }
+    return (cnt == 0);
+}
+
+
+//04.영어 끝말잇기
 function solution(n, words) {
     let len = words.length;
     let num1 = len, num2;
