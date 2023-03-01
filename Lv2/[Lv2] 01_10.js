@@ -30,8 +30,53 @@ function sol_RightMatch(s) {
     return (cnt == 0);
 }
 
+//04.숫자의 표현
+function solution(n) {
+    if (n < 5) {
+        return n > 2 ? 2 : 1;
+    }
 
-//04.영어 끝말잇기
+    let maxN = Math.floor(n / 2)
+    let min = 1;
+    let cnt = 1;
+
+    for (let i = maxN; i > 1; i--) {
+        let doubleI = i + i;
+        console.log(i, doubleI);
+        if (chkConsecutiveNum(i, doubleI + 1, n)) {
+            cnt += 1;
+            console.log("");
+            continue;
+        }
+        if (chkConsecutiveNum(i, doubleI, n - i)) {
+            cnt += 1;
+        }
+
+        console.log("");
+    }
+
+    return cnt;
+}
+
+
+function chkConsecutiveNum(num, addNum, retNum) {
+    let rN = retNum % addNum;
+
+    if (rN == 0) {
+        let qN = Math.round(retNum / addNum);
+        if (num - qN > 0) {
+            console.log(addNum, retNum, rN, qN, addNum * qN, (addNum * qN == retNum))
+            return (addNum * qN == retNum);
+        }
+        return false;
+    }
+
+    console.log(addNum, retNum, rN, Math.round(retNum / addNum), "false")
+    return false;
+}
+
+
+//05.영어 끝말잇기
 function solution(n, words) {
     let len = words.length;
     let num1 = len, num2;
