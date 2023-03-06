@@ -30,7 +30,20 @@ function sol_RightMatch(s) {
     return (cnt == 0);
 }
 
-//04.숫자의 표현
+//04.점프와 순간 이동
+function solution(n) {
+    var ans = 0;
+
+    while (n > 0) {
+        if (n % 2 != 0) {
+            ans++;
+        }
+        n = Math.floor(n / 2);
+    }
+    return ans;
+}
+
+//05.숫자의 표현
 function solution(n) {
     if (n < 5) {
         return n > 2 ? 2 : 1;
@@ -76,7 +89,7 @@ function chkConsecutiveNum(num, addNum, retNum) {
 }
 
 
-//05.영어 끝말잇기
+//06.영어 끝말잇기
 function solution(n, words) {
     let len = words.length;
     let num1 = len, num2;
